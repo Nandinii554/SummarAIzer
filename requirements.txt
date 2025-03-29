@@ -1,0 +1,6 @@
+streamlit
+pymupdf
+google-generativeai
+langchain
+deep-translator
+pyttsx3
