@@ -104,7 +104,7 @@ if uploaded_file:
 
     # 🔍 Q&A Tab
     with tab3:
-        st.subheader("🔍 Ask a Question")
+        st.subheader("🔍 Ask a Question from your pdf")
         user_question = st.text_input("Enter your question:")
         if user_question:
             st.info("💡 Searching for the answer...")
