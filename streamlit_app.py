@@ -1,4 +1,5 @@
 import streamlit as st
+import pymupdf
 import fitz  # PyMuPDF for extracting text from PDF
 import google.generativeai as genai
 from langchain.prompts import PromptTemplate
