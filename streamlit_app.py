@@ -5,9 +5,13 @@ import google.generativeai as genai
 from langchain.prompts import PromptTemplate
 import re
 from deep_translator import GoogleTranslator
+import toml
 
-# Configure Google Gemini API
-GENAI_API_KEY = "AIzaSyAXYvoCq9GNwnK4-em0On0XZ9PoAyaLkg0"
+# Load API key from config.toml
+config = toml.load(".streamlit/config.toml")
+GENAI_API_KEY = config["general"]["GENAI_API_KEY"]
+
+# Set API key for Google Gemini
 genai.configure(api_key=GENAI_API_KEY)
 
 # Function to extract text from PDF
