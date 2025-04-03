@@ -61,9 +61,26 @@ def answer_question(pdf_text, user_question):
     return response.text
 
 
-# Function to translate text
+# # Function to translate text
+# def translate_text(text, target_language):
+#     return GoogleTranslator(source="auto", target=target_language).translate(text)
+# Function to translate text with error handling
 def translate_text(text, target_language):
-    return GoogleTranslator(source="auto", target=target_language).translate(text)
+    if not text.strip():
+        return "⚠️ No text available for translation."
+
+    # Ensure the text is within Google's 5000 character limit
+    max_length = 5000
+    if len(text) > max_length:
+        text = text[:max_length]  # Truncate to fit within the limit
+        st.warning("⚠️ Text too long for translation. Only the first 5000 characters were translated.")
+
+    try:
+        return GoogleTranslator(source="auto", target=target_language).translate(text)
+    except exceptions.NotValidLength:
+        return "⚠️ Translation error: Text length is invalid."
+    except Exception as e:
+        return f"❌ Translation failed: {e}"
 
 
 # Function to generate a summary stream
