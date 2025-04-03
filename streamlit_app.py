@@ -5,11 +5,8 @@ import google.generativeai as genai
 from langchain.prompts import PromptTemplate
 import re
 from deep_translator import GoogleTranslator
-import toml
 
-# Load API key from config.toml
-config = toml.load(".streamlit/config.toml")
-GENAI_API_KEY = config["general"]["GENAI_API_KEY"]
+GENAI_API_KEY = st.secrets["GENAI_API_KEY"]
 
 # Set API key for Google Gemini
 genai.configure(api_key=GENAI_API_KEY)
