@@ -139,30 +139,39 @@ if uploaded_file:
 
     # 🔍 Q&A Tab
     with tab3:
-        # Initialize chat history
-        if "messages" not in st.session_state:
-            st.session_state.messages = []
+        # # Initialize chat history
+        # if "messages" not in st.session_state:
+        #     st.session_state.messages = []
 
-        # Display chat messages from history on app rerun
-        for message in st.session_state.messages:
-            with st.chat_message(message["role"]):
-                st.markdown(message["content"])
+        # # Display chat messages from history on app rerun
+        # for message in st.session_state.messages:
+        #     with st.chat_message(message["role"]):
+        #         st.markdown(message["content"])
 
-        # User input for asking questions
-        if user_question := st.chat_input("Ask a question"):
-            # Display user message in chat message container
-            with st.chat_message("user"):
-                st.markdown(user_question)
-            # Add user message to chat history
-            st.session_state.messages.append({"role": "user", "content": user_question})
-            # Generate answer using Gemini AI
+        # # User input for asking questions
+        # if user_question := st.chat_input("Ask a question"):
+        #     # Display user message in chat message container
+        #     with st.chat_message("user"):
+        #         st.markdown(user_question)
+        #     # Add user message to chat history
+        #     st.session_state.messages.append({"role": "user", "content": user_question})
+        #     # Generate answer using Gemini AI
+        #     answer = answer_question(pdf_text, user_question)
+        #     # Display assistant message in chat message container
+        #     with st.chat_message("assistant"):
+        #         st.markdown(answer)
+        #     # Add assistant message to chat history
+        #     st.session_state.messages.append({"role": "assistant", "content": answer})
+        user_question = st.text_input(
+            "Ask a question",
+            placeholder="Type your question here...",
+            label_visibility="hidden",
+        )
+        if user_question:
             answer = answer_question(pdf_text, user_question)
-            # Display assistant message in chat message container
-            with st.chat_message("assistant"):
-                st.markdown(answer)
-            # Add assistant message to chat history
-            st.session_state.messages.append({"role": "assistant", "content": answer})
-
+            st.info("Answer:")
+            st.write(answer)
+    
 st.divider()
 st.caption("🛠️ Designed and developed by Nandini Toshniwal")
 st.markdown(
