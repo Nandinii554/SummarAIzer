@@ -68,7 +68,6 @@ st.divider()
 uploaded_file = st.file_uploader("📂 Upload a PDF file", type=["pdf"])
 
 if uploaded_file:
-    st.info("🔍 Extracting text from PDF...")
     pdf_text = extract_text_from_pdf(uploaded_file)
 
     if len(pdf_text) > 5000:
@@ -78,7 +77,6 @@ if uploaded_file:
     level = st.radio("📜 Select Summary Level", ["Short", "Medium", "Detailed"], index=1)
 
     # Generating Summary
-    st.success("✅ Text extraction complete! Generating summary...")
     summary = summarize_text(pdf_text, level)
     summary = clean_summary(summary)
 
