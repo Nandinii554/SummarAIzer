@@ -1,3 +1,5 @@
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://summar-ai-zer.streamlit.app/)
+
 # 📑 SummarAIzer 
 
 🚀 **A powerful Streamlit-based web application that allows users to summarize research papers, translate summaries into multiple languages, and ask AI-powered questions about the document.**  
@@ -44,6 +46,3 @@ The project integrates **cutting-edge AI and NLP technologies** to deliver an ef
 5. The user can interact with the AI by asking **questions** related to the paper.  
 
 ---
-
-## 🚀 Live Demo  
-Check out the live app here: [Research Paper Summarizer](https://summar-ai-zer.streamlit.app/)
