@@ -64,6 +64,7 @@ st.set_page_config(page_title="PDF Summarizer & QA", layout="wide", page_icon="�
 # Upload File Section
 st.title("Summar-AI-zer 🤖📄")  
 st.caption("Turning long reads into quick insights!")
+st.divider()
 uploaded_file = st.file_uploader("📂 Upload a PDF file", type=["pdf"])
 
 if uploaded_file:
