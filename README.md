@@ -46,4 +46,4 @@ The project integrates **cutting-edge AI and NLP technologies** to deliver an ef
 ---
 
 ## 🚀 Live Demo  
-Check out the live app here: [Research Paper Summarizer](https://summar-aizer.streamlit.app/)
+Check out the live app here: [Research Paper Summarizer](https://summar-aiz-er.streamlit.app/)
